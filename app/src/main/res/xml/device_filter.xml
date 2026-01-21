@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Example: Rubber Ducky (HID Keyboard) -->
+    <usb-device vendor-id="4660" product-id="22136" />  <!-- 0x1234:0x5678 -->
+
+    <!-- Example: USB Storage -->
+    <usb-device class="8" subclass="6" protocol="80" />
+</resources>
