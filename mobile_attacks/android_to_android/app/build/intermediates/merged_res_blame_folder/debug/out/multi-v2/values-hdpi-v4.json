@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/morris/Weapons-main/mobile_attacks/android_to_android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/morris/.gradle/caches/transforms-3/01223f2afbad9b820ee81b54d2dfbe5a/transformed/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

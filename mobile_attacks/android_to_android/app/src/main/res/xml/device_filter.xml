@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <usb-device vendor-id="0" product-id="0" />
+    <!-- Generic Android devices -->
+    <usb-device vendor-id="18d1" />
+    <!-- Google -->
+    <usb-device vendor-id="22b8" />
+    <!-- Motorola -->
+    <usb-device vendor-id="04e8" />
+    <!-- Samsung -->
+    <usb-device vendor-id="0bb4" />
+    <!-- HTC -->
+    <usb-device vendor-id="0489" />
+    <!-- LG -->
+    <usb-device vendor-id="12d1" />
+    <!-- Huawei -->
+</resources>
