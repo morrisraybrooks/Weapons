@@ -19,30 +19,187 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Android-to-Android Exploitation"
+            android:text="USB Attack Platform"
             android:textSize="16sp"
             android:layout_marginTop="8dp" />
         
+        <!-- Attack Mode Selector -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="USB Attack (OTG)"
+            android:text="Attack Mode"
             android:textSize="18sp"
+            android:textStyle="bold"
             android:layout_marginTop="16dp" />
         
-        <Button
-            android:id="@+id/usbAttackButton"
+        <Spinner
+            android:id="@+id/attackModeSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Execute USB Attack"
             android:layout_marginTop="8dp" />
         
+        <!-- ADB Attack Section -->
+        <LinearLayout
+            android:id="@+id/adbSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USB ADB Attack (OTG)"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp" />
+            
+            <Button
+                android:id="@+id/usbAttackButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Execute USB Attack"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+        
+        <!-- Bad USB Section -->
+        <LinearLayout
+            android:id="@+id/badUsbSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bad USB HID Attack"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp" />
+            
+            <Spinner
+                android:id="@+id/badUsbPayloadSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+            
+            <EditText
+                android:id="@+id/attackerIpEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Attacker IP (for reverse shell)"
+                android:inputType="text" />
+            
+            <Button
+                android:id="@+id/initHidButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Initialize USB HID"
+                android:layout_marginTop="8dp" />
+            
+            <Button
+                android:id="@+id/executeBadUsbButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Execute Bad USB Attack"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+        
+        <!-- Rubber Ducky Section -->
+        <LinearLayout
+            android:id="@+id/duckySection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USB Rubber Ducky"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp" />
+            
+            <Spinner
+                android:id="@+id/duckyPayloadSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+            
+            <EditText
+                android:id="@+id/customPayloadEditText"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="top"
+                android:hint="Custom DuckyScript payload..."
+                android:inputType="textMultiLine" />
+            
+            <Button
+                android:id="@+id/loadPayloadButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Load Selected Payload"
+                android:layout_marginTop="8dp" />
+            
+            <Button
+                android:id="@+id/executeDuckyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Execute DuckyScript"
+                android:layout_marginTop="8dp" />
+            
+            <Button
+                android:id="@+id/stopDuckyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop Execution"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+        
+        <!-- USB Mass Storage Section -->
+        <LinearLayout
+            android:id="@+id/massStorageSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USB Mass Storage"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp" />
+            
+            <Button
+                android:id="@+id/initMassStorageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Initialize Mass Storage"
+                android:layout_marginTop="8dp" />
+            
+            <Button
+                android:id="@+id/addTrojanButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Trojan Document"
+                android:layout_marginTop="8dp" />
+            
+            <Button
+                android:id="@+id/stopMassStorageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop Mass Storage"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+        
+        <!-- Network Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Network Attack"
+            android:text="Network Tools"
             android:textSize="18sp"
-            android:layout_marginTop="16dp" />
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
         
         <EditText
             android:id="@+id/targetIpEditText"
@@ -62,8 +219,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reverse Shell"
-            android:textSize="18sp"
-            android:layout_marginTop="16dp" />
+            android:textSize="16sp"
+            android:layout_marginTop="12dp" />
         
         <EditText
             android:id="@+id/lhostEditText"
@@ -93,20 +250,40 @@
             android:text="Exfiltrate Data"
             android:layout_marginTop="8dp" />
         
+        <!-- Progress Bar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:visibility="gone" />
+        
+        <!-- Results Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Results"
+            android:text="Results / Log"
             android:textSize="18sp"
+            android:textStyle="bold"
             android:layout_marginTop="16dp" />
         
         <TextView
             android:id="@+id/resultTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f0f0f0"
+            android:background="#1a1a1a"
+            android:textColor="#00ff00"
             android:padding="8dp"
-            android:textSize="12sp"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
             android:minHeight="200dp" />
+        
+        <Button
+            android:id="@+id/clearLogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear Log"
+            android:layout_marginTop="8dp" />
     </LinearLayout>
 </ScrollView>

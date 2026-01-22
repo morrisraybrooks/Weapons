@@ -1,0 +1,69 @@
+REM ========================================
+REM System Information Gathering
+REM Collects system info and saves to temp
+REM ========================================
+
+DELAY 2000
+
+REM Open Run dialog
+GUI r
+DELAY 500
+
+REM Open PowerShell
+STRING powershell
+ENTER
+DELAY 1500
+
+REM Create output file
+STRING $out = "$env:TEMP\sysinfo_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
+ENTER
+DELAY 200
+
+REM Gather system info
+STRING "=== SYSTEM INFO ===" | Out-File $out
+ENTER
+DELAY 100
+STRING Get-ComputerInfo | Out-File $out -Append
+ENTER
+DELAY 500
+
+REM Network info
+STRING "`n=== NETWORK INFO ===" | Out-File $out -Append
+ENTER
+DELAY 100
+STRING Get-NetIPConfiguration | Out-File $out -Append
+ENTER
+DELAY 300
+
+REM User info
+STRING "`n=== USER INFO ===" | Out-File $out -Append
+ENTER
+DELAY 100
+STRING whoami /all | Out-File $out -Append
+ENTER
+DELAY 300
+
+REM Running processes
+STRING "`n=== PROCESSES ===" | Out-File $out -Append
+ENTER
+DELAY 100
+STRING Get-Process | Select-Object Name,Id,Path | Out-File $out -Append
+ENTER
+DELAY 500
+
+REM Installed software
+STRING "`n=== INSTALLED SOFTWARE ===" | Out-File $out -Append
+ENTER
+DELAY 100
+STRING Get-ItemProperty HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object DisplayName, DisplayVersion | Out-File $out -Append
+ENTER
+DELAY 500
+
+REM Open the file
+STRING notepad $out
+ENTER
+DELAY 500
+
+REM Exit PowerShell
+STRING exit
+ENTER

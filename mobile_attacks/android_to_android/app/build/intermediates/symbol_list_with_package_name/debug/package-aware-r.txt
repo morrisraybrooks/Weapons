@@ -1744,7 +1744,9 @@ id action_mode_close_button
 id action_text
 id actions
 id activity_chooser_view_content
+id adbSection
 id add
+id addTrojanButton
 id alertTitle
 id aligned
 id all
@@ -1753,10 +1755,14 @@ id animateToEnd
 id animateToStart
 id asConfigured
 id async
+id attackModeSpinner
+id attackerIpEditText
 id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id badUsbPayloadSpinner
+id badUsbSection
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1780,6 +1786,7 @@ id chip3
 id chip_group
 id chronometer
 id circle_center
+id clearLogButton
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1795,6 +1802,7 @@ id cos
 id counterclockwise
 id custom
 id customPanel
+id customPayloadEditText
 id cut
 id dataExfilButton
 id date_picker_actions
@@ -1822,6 +1830,8 @@ id dragRight
 id dragStart
 id dragUp
 id dropdown_menu
+id duckyPayloadSpinner
+id duckySection
 id easeIn
 id easeInOut
 id easeOut
@@ -1831,6 +1841,8 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id executeBadUsbButton
+id executeDuckyButton
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1864,6 +1876,8 @@ id ignore
 id ignoreRequest
 id image
 id info
+id initHidButton
+id initMassStorageButton
 id invisible
 id inward
 id italic
@@ -1882,8 +1896,10 @@ id line3
 id linear
 id listMode
 id list_item
+id loadPayloadButton
 id lportEditText
 id masked
+id massStorageSection
 id material_clock_display
 id material_clock_face
 id material_clock_hand
@@ -1964,6 +1980,7 @@ id percent
 id pin
 id position
 id postLayout
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2030,6 +2047,8 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id stop
+id stopDuckyButton
+id stopMassStorageButton
 id stretch
 id submenuarrow
 id submit_area
@@ -3184,6 +3203,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml accessory_filter
 xml device_filter
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end

